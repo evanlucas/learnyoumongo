@@ -2,7 +2,7 @@
 
 A [workshopper](https://github.com/rvagg/workshopper) for MongoDB
 
-![ss](https://raw.githubusercontent.com/evanlucas/learnyounode/master/screenshot.png)
+![ss](https://raw.githubusercontent.com/evanlucas/learnyoumongo/master/screenshot.png)
 
 ### What you'll need to run learnyoumongo:
 
