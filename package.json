@@ -2,7 +2,6 @@
   "name": "learnyoumongo",
   "version": "1.0.0",
   "description": "Nodeschool workshop for MongoDB",
-  "main": "index.js",
   "bin": {
     "learnyoumongo": "learnyoumongo.js"
   },
