@@ -1,6 +1,8 @@
 [
   "MONGOD",
   "CONNECT",
+  "FIND",
+  "FIND LIMIT",
   "INSERT",
   "UPDATE",
   "REMOVE"
