@@ -1,0 +1,27 @@
+{
+  "name": "learnyoumongo",
+  "version": "1.0.0",
+  "description": "Nodeschool workshop for MongoDB",
+  "main": "index.js",
+  "bin": {
+    "learnyoumongo": "learnyoumongo.js"
+  },
+  "dependencies": {
+    "chalk": "~1.0.0",
+    "mongodb": "~2.0.28",
+    "through2": "~0.6.5",
+    "workshopper": "~2.5.0",
+    "workshopper-exercise": "~2.3.0"
+  },
+  "devDependencies": {},
+  "license": "MIT",
+  "author": "Evan Lucas <evanlucas@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanlucas/learnyoumongo"
+  },
+  "homepage": "https://github.com/evanlucas/learnyoumongo",
+  "bugs": {
+    "url": "https://github.com/evanlucas/learnyoumongo/issues"
+  }
+}
