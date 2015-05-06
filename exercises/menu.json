@@ -1,5 +1,6 @@
 [
   "MONGOD",
   "CONNECT",
-  "INSERT"
+  "INSERT",
+  "UPDATE"
 ]
