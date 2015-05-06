@@ -43,8 +43,9 @@ exercise.addSetup(function(mode, cb) {
       db = _db
       db.collection('docs').remove({}, cb)
     })
+  } else {
+    process.nextTick(cb)
   }
-  process.nextTick(cb)
 })
 
 function findDoc(args, cb) {
@@ -55,12 +56,12 @@ function findDoc(args, cb) {
   }
   collection.find(doc).toArray(function(err, docs) {
     if (err) return cb(err)
+    db.close()
     if (!docs.length) {
       return exercise.emit('fail', 'Could not find ' + JSON.stringify(doc))
     }
-    db.close()
     var doc = docs[0]
-    doc._id = String(doc._id)
+    delete doc._id
     cb(null, doc)
   })
 }
@@ -74,10 +75,12 @@ exercise.addProcessor(function(mode, cb) {
     if (chunk)
       try {
         orig = JSON.parse(chunk)
+        delete orig._id
       }
       catch (err) {
         exercise.emit('fail', 'Unable to parse JSON. ' +
           'Did you stringify the output?')
+        cb(err)
       }
   })
 
@@ -90,15 +93,17 @@ exercise.addProcessor(function(mode, cb) {
           doc = sortObj(doc)
           try {
             compare(orig, doc)
-            exercise.emit('pass', 'Successfully inserted document')
+            cb(null, true)
           }
           catch (e) {
             console.log(e)
             exercise.emit('fail', e.message)
+            cb(null, false)
           }
-          sub.end()
-          cb(null, true)
+          //sub.end()
         })
+      } else {
+        cb(null, false)
       }
     })
   }
@@ -130,7 +135,5 @@ function compare(a, b) {
 
   assert.deepEqual(a, b)
 }
-
-exercise = comparestdout(exercise)
 
 module.exports = exercise
