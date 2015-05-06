@@ -5,7 +5,7 @@ var workshopper = require('workshopper')
 
 workshopper({
   name: 'learnyoumongo'
-, title: 'learnyoumongo'
+, title: 'Learn MongoDB'
 , description: 'Learn MongoDB'
 , appDir: __dirname
 , exerciseDir: fpath('./exercises')
