@@ -10,6 +10,10 @@ workshopper({
 , appDir: __dirname
 , exerciseDir: fpath('./exercises')
 , footerFile: fpath('footer.md')
+, menu: {
+    bg: 15
+  , fg: 'black'
+  }
 })
 
 function fpath (f) {
