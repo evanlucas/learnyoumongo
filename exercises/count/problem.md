@@ -1,0 +1,23 @@
+Here we will learn how to count the number of documents that
+meet certain criteria.
+
+Use the `parrots` collection to count all documents where `age`
+is greater than the first argument passed to your script.
+
+Using `console.log`, print the number to `stdout`.
+
+-----------------------------------------------------------
+## HINTS
+
+To count the number of documents meeting certain criteria,
+we must use the `collection.count()` function.
+
+Here is an example:
+
+```js
+collection.count({
+  name: 'foo'
+}, function(err, count) {
+
+})
+```
