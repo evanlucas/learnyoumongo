@@ -6,5 +6,6 @@
   "INSERT",
   "UPDATE",
   "REMOVE",
-  "COUNT"
+  "COUNT",
+  "AGGREGATE"
 ]
