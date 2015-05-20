@@ -12,7 +12,7 @@ Say we have a user defined like:
 
 We want to change Tina's age from 30 to 40.
 
-For the purpose of this lesson, assum that the `username` property is unique.
+For the purpose of this lesson, assume that the `username` property is unique.
 
 -----------------------------------------------------------
 ## HINTS
