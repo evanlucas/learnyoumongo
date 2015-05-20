@@ -56,7 +56,6 @@ function verifyUser(cb) {
     var doc = docs[0]
     if (doc.age === 40) {
       return cb(null, true)
-      return exercise.emit('pass', 'Successfully updated age property')
     }
 
     exercise.emit('fail', 'Document has incorrect age property.' +
