@@ -4,9 +4,13 @@ var exercise = require('workshopper-exercise')()
 exercise.requireSubmission = false
 
 exercise.addProcessor(function(mode, cb) {
-  exec('mongod --version', function(err, stdout, stderr) {
+  var filename = process.platform === 'win32'
+    ? 'mongod.exe'
+    : 'mongod'
+  var errmsg = 'It doesn\'t look like mongod is installed and in your $PATH'
+  exec(filename + ' --version', function(err, stdout, stderr) {
     if (err) {
-      return this.emit('fail', 'It doesn\'t look like mongod is installed')
+      return this.emit('fail', errmsg)
     }
 
     if (mode === 'run') {
