@@ -3,18 +3,23 @@
 var workshopper = require('workshopper')
   , path = require('path')
 
-workshopper({
+var opts = {
   name: 'learnyoumongo'
 , title: 'Learn MongoDB'
 , description: 'Learn MongoDB'
 , appDir: __dirname
 , exerciseDir: fpath('./exercises')
 , footerFile: fpath('footer.md')
-, menu: {
+}
+
+if (process.platform !== 'win32') {
+  opts.menu = {
     bg: 15
   , fg: 'black'
   }
-})
+}
+
+workshopper(opts)
 
 function fpath (f) {
   return path.join(__dirname, f)
