@@ -39,3 +39,7 @@ collection.update({
 ```
 
 The first argument to `update()` is the query. This query is what filters the documents that we are wanting to update. The second argument is an object of the properties to update. Pay close attention to the `$set` property. If we were to omit `$set`, the document would be replaced with the object represented by the second argument.
+
+If your program does not finish executing, you may have forgotten to
+close the `db`. That can be done by calling `db.close()` after you
+have finished.

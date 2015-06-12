@@ -91,3 +91,7 @@ Other operators used in the `$group` stage include:
 - `$min`
 - `$push`
 - `$addToSet`
+
+If your program does not finish executing, you may have forgotten to
+close the `db`. That can be done by calling `db.close()` after you
+have finished.
