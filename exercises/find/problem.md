@@ -26,6 +26,8 @@ To find a document or documents, one needs to call `find()` on the collection.
 
 Find is a little bit different than what we are used to seeing.
 
+take in mind, retrieve data from `process` is an string, for convert data to integer you should use parseInt().
+
 Here is an example:
 
 ```js
@@ -39,3 +41,7 @@ collection.find({
 If your program does not finish executing, you may have forgotten to
 close the `db`. That can be done by calling `db.close()` after you
 have finished.
+
+## Resources:
+* http://docs.mongodb.org/manual/reference/method/db.collection.find/
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
