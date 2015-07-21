@@ -1,5 +1,5 @@
 var mongo = require('mongodb').MongoClient
-var age = process.argv[2]
+var size = process.argv[2]
 
 var url = 'mongodb://localhost:27017/learnyoumongo'
 
@@ -8,7 +8,7 @@ mongo.connect(url, function(err, db) {
   var prices = db.collection('prices')
   prices.aggregate([
     { $match: {
-      size: process.argv[2]
+      size: size
     }}
   , { $group: {
       _id: 'total'
