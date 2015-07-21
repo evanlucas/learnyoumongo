@@ -26,7 +26,7 @@ To find a document or documents, one needs to call `find()` on the collection.
 
 Find is a little bit different than what we are used to seeing.
 
-take in mind, retrieve data from `process` is an string, for convert data to integer you should use parseInt().
+take in mind, retrieve data from `process.argv` is an string, for convert data to integer you should use parseInt().
 
 Here is an example:
 
