@@ -34,5 +34,5 @@ If your program does not finish executing, you may have forgotten to
 close the `db`. That can be done by calling `db.close()` after you
 have finished.
 
-## resource:
+## Resource:
 * http://docs.mongodb.org/manual/reference/method/db.collection.find/#explicitly-exclude-the-id-field

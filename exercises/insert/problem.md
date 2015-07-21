@@ -56,3 +56,6 @@ To insert a document, one would need to call `insert()` on the collection.
 If your program does not finish executing, you may have forgotten to
 close the `db`. That can be done by calling `db.close()` after you
 have finished.
+
+## Resource
+* http://docs.mongodb.org/manual/reference/method/db.collection.insert/
