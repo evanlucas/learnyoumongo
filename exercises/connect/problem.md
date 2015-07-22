@@ -11,7 +11,7 @@ mkdir data
 
 To start mongo on port 27017, run `mongod --port 27017 --dbpath=./data`.
 
-Then, in another terminal, run `npm install mongodb` if necessary then running with `sudo`.
+Then, in another terminal, run `npm install mongodb`.
 
 Then, run `learnyoumongo verify`.
 
