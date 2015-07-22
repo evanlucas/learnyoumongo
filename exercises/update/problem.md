@@ -43,3 +43,7 @@ The first argument to `update()` is the query. This query is what filters the do
 If your program does not finish executing, you may have forgotten to
 close the `db`. That can be done by calling `db.close()` after you
 have finished.
+
+## Resources
+* http://docs.mongodb.org/manual/tutorial/modify-documents/
+* http://docs.mongodb.org/manual/reference/operator/update/set/#set
