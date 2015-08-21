@@ -1,8 +1,10 @@
 This lesson involves removing a document with the given `_id`.
 
-The collection name will be passed as the first argument to your script.
+The database name will be accessible via `process.argv[2]`.
 
-The `_id` will be passed as the second argument to your script.
+The collection name will be passed as the second argument to your script.
+
+The `_id` will be passed as the third argument to your script.
 
 -----------------------------------------------------------
 ## HINTS
