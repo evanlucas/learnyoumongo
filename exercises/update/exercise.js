@@ -7,29 +7,47 @@ var mongo = require('mongodb').MongoClient
 exercise = filecheck(exercise)
 
 exercise = execute(exercise)
-
-var db, url = 'mongodb://localhost:27017/learnyoumongo'
+var base = 'mongodb://localhost:27017/'
+var exUrl = base + 'learnyoumongo'
+var solUrl = base + 'learnyoumongo2'
+var exdb, soldb
 
 exercise.addSetup(function(mode, cb) {
-  if (mode === 'verify') {
-    return mongo.connect(url, function(err, _db) {
-      if (err) return cb(err)
-      db = _db
-      resetUsers(cb)
-    })
+  this.submissionArgs = ['learnyoumongo']
+  this.solutionArgs = ['learnyoumongo2']
+  var count = 0, error
+  function done(err) {
+    count++
+    if (err) {
+      error = err
+    }
+
+    if (count === 2) cb(error)
   }
+
+  mongo.connect(exUrl, function(err, _db) {
+    if (err) return done(err)
+    exdb = _db
+    resetUsers(exdb, done)
+  })
+
+  mongo.connect(solUrl, function(err, _db) {
+    if (err) return done(err)
+    soldb = _db
+    resetUsers(soldb, done)
+  })
 })
 
 exercise.addProcessor(function(mode, cb) {
   this.submissionStdout.pipe(process.stdout)
   return this.on('executeEnd', function() {
-    verifyUser(function(err) {
-      cb(null, true)
+    verifyUser(exdb, function(err, passed) {
+      cb(null, passed)
     })
   })
 })
 
-function resetUsers(cb) {
+function resetUsers(db, cb) {
   var users = db.collection('users')
   users.remove({}, function(err) {
     if (err) return cb(err)
@@ -41,7 +59,7 @@ function resetUsers(cb) {
   })
 }
 
-function verifyUser(cb) {
+function verifyUser(db, cb) {
   var users = db.collection('users')
   users.find({
     username: 'tinatime'
@@ -59,7 +77,7 @@ function verifyUser(cb) {
     }
 
     exercise.emit('fail', 'Document has incorrect age property.' +
-      'Expected: %s Actual: %s', chalk.green(40), chalk.red(doc.age))
+      'Expected: ' + chalk.green(40) + ' Actual: ' + chalk.red(doc.age))
     cb(null, false)
   })
 }

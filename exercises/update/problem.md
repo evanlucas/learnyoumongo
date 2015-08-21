@@ -1,5 +1,7 @@
 Here we are going to update a document in the `users` collection.
 
+The database name will be accessible via `process.argv[2]`.
+
 Say we have a user defined like:
 
 ```json
