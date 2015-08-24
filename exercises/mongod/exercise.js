@@ -26,7 +26,7 @@ exercise.addProcessor(function(mode, cb) {
     }
 
     cb(null, !!vers)
-  }.bind(this))
+  }.bind(this)).stdin.end()
 })
 
 module.exports = exercise
