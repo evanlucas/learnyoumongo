@@ -41,7 +41,7 @@ If you get a `Connection Refused` error, make sure that `mongod` is still
 running.
 
 After you have successfully connected, you will need to specify a collection.
-That can be done be calling the `collection()` function on the `db` returned
+That can be done by calling the `collection()` function on the `db` returned
 in the callback to `connect`.
 
 Say you wanted to specify a collection named `users`:
@@ -50,8 +50,19 @@ Say you wanted to specify a collection named `users`:
 var collection = db.collection('users')
 ```
 
-To insert a document, one would need to call `insert()` on the collection.
+To insert a document, one would need to call `insert()` on the collection, like this:
+```js
 
+// inserting document
+// { a : 2 }
+collection.insert({
+  a: 2
+}, function(err, data) {
+  // handle error
+
+  // other operations
+})
+```
 
 If your program does not finish executing, you may have forgotten to
 close the `db`. That can be done by calling `db.close()` after you
