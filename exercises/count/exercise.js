@@ -15,7 +15,7 @@ var db, url = 'mongodb://localhost:27017/learnyoumongo'
 exercise.addSetup(function(mode, cb) {
   var self = this
   var numbers = [1, 3, 10]
-  var number = numbers[Math.floor(Math.random() * numbers.length)]
+  var number = numbers[Math.floor(Math.random() * (numbers.length-1))]
   this.submissionArgs = [number]
   this.solutionArgs = [number]
   mongo.connect(url, function(err, _db) {
@@ -24,13 +24,13 @@ exercise.addSetup(function(mode, cb) {
     col = db.collection('parrots')
     col.insert([{
       name: 'Fred'
-    , age: 1
+    , age: numbers[0]
     }, {
       name: 'Jane'
-    , age: 3
+    , age: numbers[1]
     }, {
       name: 'Jenny'
-    , age: 10
+    , age: numbers[2]
     }], cb)
   })
 })
