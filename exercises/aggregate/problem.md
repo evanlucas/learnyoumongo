@@ -92,6 +92,16 @@ Other operators used in the `$group` stage include:
 - `$push`
 - `$addToSet`
 
+# Rounding
+
+The `Number` prototype contains a function `toFixed()`, which accepts the
+number of decimal places you would like to round to, and returns a string
+representation.
+
+      var value = "1"
+      Number(value).toFixed(5)
+      // => '1.00000'
+
 If your program does not finish executing, you may have forgotten to
 close the `db`. That can be done by calling `db.close()` after you
 have finished.
