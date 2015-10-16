@@ -2,7 +2,7 @@
   "MONGOD",
   "CONNECT",
   "FIND",
-  "FIND LIMIT",
+  "FIND PROJECT",
   "INSERT",
   "UPDATE",
   "REMOVE",
