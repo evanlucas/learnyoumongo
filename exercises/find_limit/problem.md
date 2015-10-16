@@ -1,5 +1,5 @@
 Here we will learn how to search for documents but only fetch the fields
-we need.
+we need. Also known as `projection` in MongoDB
 
 Use the `parrots` collection to find all documents where `age`
 is greater than the first argument passed to your script.
