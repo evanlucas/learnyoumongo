@@ -26,7 +26,7 @@ To find a document or documents, one needs to call `find()` on the collection.
 
 Find is a little bit different than what we are used to seeing.
 
-Keep in mind, `process.argv` is an array of strings. To convert to an integer, you could use parseInt()
+To access the arguments you can use the `process.argv` array of strings (the first argument is stored at the third position `process.argv[2]`). To convert to an integer, you could use parseInt()
 
 Here is an example:
 
