@@ -3,6 +3,9 @@ You can download MongoDB from `https://www.mongodb.org/downloads`.
 
 We will also need to add it to your `$PATH`.
 
+You do not have to create any file with a solution in this exercise.
+Just run `learnyoumongo verify` when you are ready with the installation.
+
 -----------------------------------------------------------
 ## HINTS
 
