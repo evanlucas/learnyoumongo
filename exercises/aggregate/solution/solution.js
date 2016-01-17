@@ -11,8 +11,8 @@ mongo.connect(url, function(err, db) {
       size: size
     }}
   , { $group: {
-      _id: 'total'
-    , total: {
+      _id: 'average'
+    , average: {
         $avg: '$price'
       }
     }}
@@ -22,7 +22,7 @@ mongo.connect(url, function(err, db) {
       throw new Error('No results found')
     }
     var o = results[0]
-    console.log(Number(o.total).toFixed(2))
+    console.log(Number(o.average).toFixed(2))
     db.close()
   })
 })
