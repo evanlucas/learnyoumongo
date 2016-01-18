@@ -1,8 +1,9 @@
 Here we will learn how to count the number of documents that
 meet certain criteria.
 
-Use the `parrots` collection to count all documents where `age`
-is greater than the first argument passed to your script.
+Use the `parrots` collection from the database named `learnyoumongo` to
+count all documents where `age` is greater than the first argument
+passed to your script.
 
 Using `console.log`, print the number to `stdout`.
 

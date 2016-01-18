@@ -18,8 +18,9 @@ like so:
 }
 ```
 
-In this exercise, we need to calculate the average price for all documents in `prices`
-that have the size that will be passed as the first argument to your script.
+In this exercise, we need to calculate the average price for all documents
+in the `prices` collection in the database named `learnyoumongo` that have
+the size that will be passed as the first argument to your script.
 
 Use `console.log()` to print the average price rounded to 2 decimal places
 to stdout after you have found it.

@@ -1,6 +1,6 @@
 Here we will learn how to search for documents.
 
-For all of the exercises, the database is `learnyoumongo`.
+In this exercise the database name is `learnyoumongo`.
 So, the url would be something like: `mongodb://localhost:27017/learnyoumongo`
 
 Use the `parrots` collection to find all documents where `age`
