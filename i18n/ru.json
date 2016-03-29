@@ -1,0 +1,14 @@
+{
+  "title": "Изучаем MongoDB",
+  "exercise": {
+    "MONGOD": "MONGOD",
+    "CONNECT": "ПОДКЛЮЧЕНИЕ",
+    "FIND": "ПОИСК",
+    "FIND PROJECT": "ПОИСК ПРОЕКТА",
+    "INSERT": "ВСТАВКА",
+    "UPDATE": "ОБНОВЛЕНИЕ",
+    "REMOVE": "УДАЛЕНИЕ",
+    "COUNT": "ПОДСЧЕТ",
+    "AGGREGATE": "АГРЕГАЦИЯ"
+  }
+}
