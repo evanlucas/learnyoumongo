@@ -28,4 +28,4 @@ close the `db`. That can be done by calling `db.close()` after you
 have finished.
 
 ## Resource
-* https://docs.mongodb.com/manual/reference/method/db.collection.count/#db.collection.count
+* https://docs.mongodb.com/manual/reference/method/db.collection.count/
