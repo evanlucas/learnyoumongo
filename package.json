@@ -6,11 +6,11 @@
     "learnyoumongo": "learnyoumongo.js"
   },
   "dependencies": {
-    "chalk": "~1.0.0",
-    "mongodb": "~2.0.28",
-    "through2": "~0.6.5",
-    "workshopper": "~2.5.0",
-    "workshopper-exercise": "~2.3.0"
+    "chalk": "~1.1.3",
+    "mongodb": "~2.1.21",
+    "through2": "~2.0.1",
+    "workshopper": "~2.7.0",
+    "workshopper-exercise": "~2.7.0"
   },
   "devDependencies": {},
   "license": "MIT",
