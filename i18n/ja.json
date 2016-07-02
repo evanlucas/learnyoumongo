@@ -1,0 +1,14 @@
+{
+  "title": "MongoDBを学ぼう",
+  "exercise": {
+    "MONGOD": "MONGOD",
+    "CONNECT": "CONNECT",
+    "FIND": "FIND",
+    "FIND PROJECT": "FIND PROJECT",
+    "INSERT": "INSERT",
+    "UPDATE": "UPDATE",
+    "REMOVE": "REMOVE",
+    "COUNT": "COUNT",
+    "AGGREGATE": "AGGREGATE"
+  }
+}
