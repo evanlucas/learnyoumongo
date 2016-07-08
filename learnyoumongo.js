@@ -10,7 +10,7 @@ var opts = {
 , appDir: __dirname
 , exerciseDir: fpath('./exercises')
 , footerFile: fpath('footer.md')
-, languages: ['en', 'ru', 'ja']
+, languages: ['en', 'es', 'ru', 'ja']
 }
 
 if (process.platform !== 'win32') {
