@@ -37,3 +37,4 @@ have finished.
 
 ## Resource:
 * http://docs.mongodb.org/manual/reference/method/db.collection.find/#explicitly-exclude-the-id-field
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#find

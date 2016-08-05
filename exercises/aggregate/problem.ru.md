@@ -112,3 +112,4 @@ Number(value).toFixed(5)
 ## Ресурсы
 * http://docs.mongodb.org/manual/aggregation/
 * http://docs.mongodb.org/manual/core/aggregation-introduction/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#aggregate

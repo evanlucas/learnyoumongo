@@ -24,4 +24,4 @@ collection.remove({
 もしプログラムの実行が終了しない場合、`db`を閉じるのを忘れている可能性があります。プログラムの最後に `db.close()` を呼び出す事で終了することができます。
 
 ## 参考資料:
-* http://docs.mongodb.org/manual/reference/method/db.collection.remove/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#remove

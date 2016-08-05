@@ -67,4 +67,4 @@ collection.insert({
 Это можно сделать путем вызова метода `db.close()` после того как вы закончите.
 
 ## Ресурсы
-* http://docs.mongodb.org/manual/reference/method/db.collection.insert/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#insert

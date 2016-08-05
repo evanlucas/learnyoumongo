@@ -115,3 +115,4 @@ Pon `db.close()` en tu programa después de que hayas hecho todo lo necesario.
 ## Recursos:
 * http://docs.mongodb.org/manual/aggregation/
 * http://docs.mongodb.org/manual/core/aggregation-introduction/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#aggregate
