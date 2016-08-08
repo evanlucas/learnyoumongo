@@ -38,9 +38,9 @@ collection.find({
 })
 ```
 
-Если ваша программа не будет заканчивать выполнение, то вы вероятно забыли закрыть `db`. 
+Если ваша программа не будет заканчивать выполнение, то вы вероятно забыли закрыть `db`.
 Это можно сделать путем вызова метода `db.close()` после того как вы закончите.
 
 ## Ресурсы:
-* http://docs.mongodb.org/manual/reference/method/db.collection.find/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#find
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt

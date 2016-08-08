@@ -46,5 +46,5 @@ Si tu programa sigue ejecutando sin parar, quizás te olvidaste de cerrar `db`.
 Pon `db.close()` en tu programa después de que hayas hecho todo lo necesario.
 
 ## Recursos:
-* http://docs.mongodb.org/manual/reference/method/db.collection.find/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#find
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt

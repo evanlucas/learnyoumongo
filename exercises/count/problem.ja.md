@@ -21,4 +21,4 @@ collection.count({
 もしプログラムの実行が終了しない場合、 `db`を閉じるのを忘れている可能性があります。プログラムの最後に `db.close()` を呼び出す事で終了することができます。
 
 ## 参考資料:
-* https: //docs.mongodb.com/manual/reference/method/db.collection.count/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#count

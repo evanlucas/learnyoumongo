@@ -26,4 +26,4 @@ collection.count({
 Это можно сделать путем вызова метода `db.close()` после того как вы закончите.
 
 ## Ресурсы
-* http://docs.mongodb.org/manual/reference/command/count/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#count

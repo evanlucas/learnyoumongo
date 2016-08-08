@@ -47,5 +47,6 @@ close the `db`. That can be done by calling `db.close()` after you
 have finished.
 
 ## Resources
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#update
 * http://docs.mongodb.org/manual/tutorial/modify-documents/
 * http://docs.mongodb.org/manual/reference/operator/update/set/#set

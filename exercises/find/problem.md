@@ -43,5 +43,5 @@ close the `db`. That can be done by calling `db.close()` after you
 have finished.
 
 ## Resources:
-* http://docs.mongodb.org/manual/reference/method/db.collection.find/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#find
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt

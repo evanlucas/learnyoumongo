@@ -27,4 +27,4 @@ Si tu programa sigue ejecutando sin parar, quizás te olvidaste de cerrar `db`.
 Pon `db.close()` en tu programa después de que hayas hecho todo lo necesario.
 
 ## Recurso:
-* https://docs.mongodb.com/manual/reference/method/db.collection.count/
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#count
