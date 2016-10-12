@@ -1,45 +1,46 @@
-var mongo = require('mongodb').MongoClient
-  , exercise = require('workshopper-exercise')()
-  , through2 = require('through2')
-  , filecheck = require('workshopper-exercise/filecheck')
-  , execute = require('workshopper-exercise/execute')
-  , comparestdout = require('workshopper-exercise/comparestdout')
-  , chalk = require('chalk')
-  , assert = require('assert')
+const mongo = require('mongodb').MongoClient
+let exercise = require('workshopper-exercise')()
+const through2 = require('through2')
+const filecheck = require('workshopper-exercise/filecheck')
+const execute = require('workshopper-exercise/execute')
+const assert = require('assert')
 
-var firstNames = [
-  'Jane'
-, 'John'
-, 'Jim'
-, 'Jessie'
-, 'Julia'
+const firstNames = [
+  'Jane',
+  'John',
+  'Jim',
+  'Jessie',
+  'Julia'
 ]
 
-var lastNames = [
-  'George'
-, 'Skye'
-, 'Love'
-, 'Smith'
+const lastNames = [
+  'George',
+  'Skye',
+  'Love',
+  'Smith'
 ]
 
-function randomItem(arr) {
+function randomItem (arr) {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
-var sub = through2()
+const sub = through2()
 
 exercise = filecheck(exercise)
 
 exercise = execute(exercise)
 
-var db, url = 'mongodb://localhost:27017/learnyoumongo'
+let db
+const url = 'mongodb://localhost:27017/learnyoumongo'
 
-exercise.addSetup(function(mode, cb) {
+exercise.addSetup((mode, cb) => {
   this.submissionArgs =
   this.solutionArgs = [randomItem(firstNames), randomItem(lastNames)]
   if (mode === 'verify') {
-    return mongo.connect(url, function(err, _db) {
-      if (err) return cb(err)
+    return mongo.connect(url, (err, _db) => {
+      if (err) {
+        return cb(err)
+      }
       db = _db
       db.collection('docs').remove({}, cb)
     })
@@ -48,59 +49,68 @@ exercise.addSetup(function(mode, cb) {
   }
 })
 
-function findDoc(args, cb) {
-  var collection = db.collection('docs')
-  var doc = {
-    firstName: args[0]
-  , lastName: args[1]
+function findDoc (args, cb) {
+  const collection = db.collection('docs')
+  const doc = {
+    firstName: args[0],
+    lastName: args[1]
   }
-  collection.find(doc).toArray(function(err, docs) {
-    if (err) return cb(err)
+
+  collection.find(doc).toArray((err, docs) => {
+    if (err) {
+      return cb(err)
+    }
     db.close()
+
     if (!docs.length) {
       return exercise.emit('fail', 'Could not find ' + JSON.stringify(doc))
     }
-    var doc = docs[0]
+
+    const doc = docs[0]
     delete doc._id
     cb(null, doc)
   })
 }
 
-exercise.addProcessor(function(mode, cb) {
-  var orig
+exercise.addProcessor((mode, cb) => {
+  let orig
   this.submissionStdout.pipe(sub)
-  var args = this.solutionArgs
-  sub.on('data', function(chunk) {
+  const args = this.solutionArgs
+
+  sub.on('data', (chunk) => {
     chunk = chunk.toString()
-    if (chunk)
+    if (chunk) {
       try {
         orig = JSON.parse(chunk)
         delete orig._id
-      }
-      catch (err) {
+      } catch (err) {
         exercise.emit('fail', 'Unable to parse JSON. ' +
           'Did you stringify the output?')
         cb(err)
       }
+    }
   })
 
   if (mode === 'verify') {
-    sub.on('end', function() {
+    sub.on('end', () => {
       if (orig) {
-        findDoc(args, function(err, doc) {
-          if (err) return cb(err)
+        findDoc(args, (err, doc) => {
+          if (err) {
+            return cb(err)
+          }
+
           orig = sortObj(orig)
           doc = sortObj(doc)
+
           try {
             compare(orig, doc)
             cb(null, true)
-          }
-          catch (e) {
+          } catch (e) {
             console.log(e)
             exercise.emit('fail', e.message)
             cb(null, false)
           }
-          //sub.end()
+          // sub.end()
         })
       } else {
         cb(null, false)
@@ -108,31 +118,29 @@ exercise.addProcessor(function(mode, cb) {
     })
   }
   this.submissionStdout = through2()
-  if (mode === 'verify')
+  if (mode === 'verify') {
     this.solutionStdout = through2()
+  }
 
   if (mode === 'run') {
     sub.pipe(process.stdout)
-    process.nextTick(function() {
+    process.nextTick(() => {
       cb(null, true)
     })
   }
 })
 
-function sortObj(obj) {
-  var keys = Object.keys(obj)
-  var o = {}
+function sortObj (obj) {
+  const keys = Object.keys(obj)
+  const o = {}
   keys.sort()
-  for (var i=0; i<keys.length; i++) {
+  for (let i = 0; i < keys.length; i++) {
     o[keys[i]] = obj[keys[i]]
   }
   return o
 }
 
-function compare(a, b) {
-  var keys = Object.keys(a)
-    , len = keys.length
-
+function compare (a, b) {
   assert.deepEqual(a, b)
 }
 

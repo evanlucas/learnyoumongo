@@ -16,6 +16,6 @@ If you are on Windows, you will need to use `mongod.exe` instead.
 It should print out something similar to:
 
 ```
-db version v2.6.8
-2015-05-06T09:44:39.362-0500 git version: nogitversion
+db version v3.2.8
+git version: ed70e33130c977bda0024c125b56d159573dbaf0
 ```

@@ -1,7 +1,7 @@
 Ahora vamos a aprender cómo buscar documentos.
 
 En este ejercicio la base de datos se llama `learnyoumongo.
-Así que el url sería algo así: `mongodb://localhost:27017/learnyoumongo`
+Así que el url sería algo así: `mongodb://localhost/learnyoumongo`
 
 Usa la colección `parrots` para encontrar todos los documentos donde
 el valor del campo `age` sea mayor que el primer argumento dado a tu
@@ -15,7 +15,7 @@ Usando `console.log`, haz que se impriman los documentos a `stdout`.
 Para conectarte a la base de datos, puedes ejecutar algo así:
 
 ```js
-var mongo = require('mongodb').MongoClient
+const mongo = require('mongodb').MongoClient
 mongo.connect(url, function(err, db) {
   // db te da acceso a la base de datos
 })

@@ -16,6 +16,6 @@ Windowsの場合は、代わりに`mongod.exe`を使用してください。
 上記を実行すると、これと似たような文言が表示される筈です。
 
 ```
-db version v3.2.6
-git version: 05552b562c7a0b3143a729aaa0838e558dc49b25
+db version v3.2.8
+git version: ed70e33130c977bda0024c125b56d159573dbaf0
 ```

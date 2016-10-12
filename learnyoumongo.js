@@ -1,27 +1,38 @@
 #!/usr/bin/env node
 
-var workshopper = require('workshopper')
-  , path = require('path')
+const workshopper = require('workshopper-adventure')
+const path = require('path')
 
-var opts = {
-  name: 'learnyoumongo'
-, title: 'Learn MongoDB'
-, description: 'Learn MongoDB'
-, appDir: __dirname
-, exerciseDir: fpath('./exercises')
-, footerFile: fpath('footer.md')
-, languages: ['en', 'es', 'ru', 'ja']
+const opts = {
+  name: 'learnyoumongo',
+  title: 'Learn MongoDB',
+  description: 'Learn MongoDB',
+  appDir: __dirname,
+  exerciseDir: path.join(__dirname, 'exercises'),
+  header: require('workshopper-adventure/default/header'),
+  footer: require('workshopper-adventure/default/footer'),
+  languages: ['en', 'es', 'ru', 'ja']
 }
 
 if (process.platform !== 'win32') {
   opts.menu = {
-    bg: 15
-  , fg: 'black'
+    bg: 15,
+    fg: 'black'
   }
 }
 
-workshopper(opts)
+const learnyoumongo = workshopper(opts)
 
-function fpath (f) {
-  return path.join(__dirname, f)
-}
+learnyoumongo.addAll([
+  "MONGOD",
+  "CONNECT",
+  "FIND",
+  "FIND PROJECT",
+  "INSERT",
+  "UPDATE",
+  "REMOVE",
+  "COUNT",
+  "AGGREGATE"
+])
+
+learnyoumongo.execute(process.argv.slice(2))

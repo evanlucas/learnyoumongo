@@ -1,7 +1,7 @@
 ここでは、ドキュメントを検索する方法を学びます。
 
 この演習でのデータベース名は `learnyoumongo` です。
-なので、urlはこのようになります: `mongodb://localhost:27017/learnyoumongo`
+なので、urlはこのようになります: `mongodb://localhost/learnyoumongo`
 
 プログラムを書いて、その第1引数より `age` が大きいすべてのドキュメントを、`parrots`コレクションより検索してください。
 
@@ -13,7 +13,7 @@
 データベースに接続するには、このようになります。
 
 ```js
-var mongo = require('mongodb').MongoClient
+cosnt mongo = require('mongodb').MongoClient
 mongo.connect(url, function(err, db) {
   // db gives access to the database
 })

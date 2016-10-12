@@ -1,77 +1,99 @@
-var mongo = require('mongodb').MongoClient
-  , exercise = require('workshopper-exercise')()
-  , filecheck = require('workshopper-exercise/filecheck')
-  , execute = require('workshopper-exercise/execute')
-  , chalk = require('chalk')
+const mongo = require('mongodb').MongoClient
+let exercise = require('workshopper-exercise')()
+const filecheck = require('workshopper-exercise/filecheck')
+const execute = require('workshopper-exercise/execute')
+const chalk = require('chalk')
 
 exercise = filecheck(exercise)
 
 exercise = execute(exercise)
-var base = 'mongodb://localhost:27017/'
-var exUrl = base + 'learnyoumongo'
-var solUrl = base + 'learnyoumongo2'
-var exdb, soldb
+const base = 'mongodb://localhost:27017/'
+const exUrl = base + 'learnyoumongo'
+const solUrl = base + 'learnyoumongo2'
+let exdb
+let soldb
 
-exercise.addSetup(function(mode, cb) {
+exercise.addSetup((mode, cb) => {
   this.submissionArgs = ['learnyoumongo']
   this.solutionArgs = ['learnyoumongo2']
-  var count = 0, error
-  function done(err) {
+  let count = 0
+  let error
+
+  function done (err) {
     count++
     if (err) {
       error = err
     }
 
-    if (count === 2) cb(error)
+    if (count === 2) {
+      cb(error)
+    }
   }
 
-  mongo.connect(exUrl, function(err, _db) {
-    if (err) return done(err)
+  mongo.connect(exUrl, (err, _db) => {
+    if (err) {
+      return done(err)
+    }
+
     exdb = _db
     resetUsers(exdb, done)
   })
 
-  mongo.connect(solUrl, function(err, _db) {
-    if (err) return done(err)
+  mongo.connect(solUrl, (err, _db) => {
+    if (err) {
+      return done(err)
+    }
+
     soldb = _db
     resetUsers(soldb, done)
   })
 })
 
-exercise.addProcessor(function(mode, cb) {
+exercise.addProcessor((mode, cb) => {
   this.submissionStdout.pipe(process.stdout)
-  return this.on('executeEnd', function() {
-    verifyUser(exdb, function(err, passed) {
+
+  return this.on('executeEnd', () => {
+    verifyUser(exdb, (err, passed) => {
+      if (err) {
+        return cb(err)
+      }
+
       cb(null, passed)
     })
   })
 })
 
-function resetUsers(db, cb) {
-  var users = db.collection('users')
-  users.remove({}, function(err) {
-    if (err) return cb(err)
+function resetUsers (db, cb) {
+  const users = db.collection('users')
+  users.remove({}, (err) => {
+    if (err) {
+      return cb(err)
+    }
+
     users.insert({
-      name: 'Tina'
-    , age: 30
-    , username: 'tinatime'
+      name: 'Tina',
+      age: 30,
+      username: 'tinatime'
     }, cb)
   })
 }
 
-function verifyUser(db, cb) {
-  var users = db.collection('users')
+function verifyUser (db, cb) {
+  const users = db.collection('users')
+
   users.find({
     username: 'tinatime'
-  }).toArray(function(err, docs) {
-    if (err) return exercise.emit('fail', 'Error verifying exercise. ' +
-      err.message)
+  }).toArray((err, docs) => {
+    if (err) {
+      return exercise.emit('fail', 'Error verifying exercise. ' + err.message)
+    }
+
     if (!docs.length) {
       return exercise.emit('fail', 'Could not find document')
     }
 
     db.close()
-    var doc = docs[0]
+    const doc = docs[0]
     if (doc.age === 40) {
       return cb(null, true)
     }

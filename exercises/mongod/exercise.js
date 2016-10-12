@@ -1,32 +1,35 @@
-var exercise = require('workshopper-exercise')()
-  , exec = require('child_process').exec
+let exercise = require('workshopper-exercise')()
+const exec = require('child_process').exec
 
 exercise.requireSubmission = false
 
-exercise.addProcessor(function(mode, cb) {
-  var filename = process.platform === 'win32'
+exercise.addProcessor((mode, cb) => {
+  const filename = process.platform === 'win32'
     ? 'mongod.exe'
     : 'mongod'
-  var errmsg = 'It doesn\'t look like mongod is installed and in your $PATH'
-  exec(filename + ' --version', function(err, stdout, stderr) {
+
+  const errmsg = `It doesn't look like mongod is installed and in your $PATH`
+  exec(`${filename} --version`, (err, stdout, stderr) => {
     if (err) {
-      return this.emit('fail', errmsg)
+      return exercise.emit('fail', errmsg)
     }
 
     if (mode === 'run') {
       console.log(stdout)
-      return;
+      return
     }
 
-    if (matches = stdout.match(/db version (.*)/)) {
-      var vers = matches[1]
-      this.emit('pass', 'mongod ' + vers)
+    const matches = stdout.match(/db version (.*)/)
+    let vers
+    if (matches) {
+      vers = matches[1]
+      exercise.emit('pass', 'mongod ' + vers)
     } else {
-      this.emit('fail', 'Invalid output from mongod')
+      exercise.emit('fail', 'Invalid output from mongod')
     }
 
     cb(null, !!vers)
-  }.bind(this)).stdin.end()
+  }).stdin.end()
 })
 
 module.exports = exercise

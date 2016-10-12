@@ -1,8 +1,9 @@
 Here we will learn how to search for documents.
 
 In this exercise the database name is `learnyoumongo`.
-So, the url would be something like: `mongodb://localhost:27017/learnyoumongo`
+So, the url would be something like: `mongodb://localhost/learnyoumongo`
 
+We will create a `parrots` collections and populate some data.
 Use the `parrots` collection to find all documents where `age`
 is greater than the first argument passed to your script.
 
@@ -14,7 +15,7 @@ Using `console.log`, print the documents to `stdout`.
 To connect to the database, one can use something like this:
 
 ```js
-var mongo = require('mongodb').MongoClient
+const mongo = require('mongodb').MongoClient
 mongo.connect(url, function(err, db) {
   // db gives access to the database
 })
@@ -33,7 +34,7 @@ Here is an example:
 ```js
 collection.find({
   name: 'foo'
-}).toArray(function(err, documents) {
+}).toArray((err, documents) => {
 
 })
 ```
