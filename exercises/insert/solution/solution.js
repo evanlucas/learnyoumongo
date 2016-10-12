@@ -7,7 +7,7 @@ var doc = {
 , lastName: lastName
 }
 
-var url = 'mongodb://localhost:27017/learnyoumongo'
+var url = process.env.LEARNYOUMONGO_URI || 'mongodb://localhost:27017/learnyoumongo'
 mongo.connect(url, function(err, db) {
   if (err) throw err
   var collection = db.collection('docs')

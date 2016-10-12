@@ -10,7 +10,7 @@ exercise = execute(exercise)
 
 exercise = comparestdout(exercise)
 
-var db, url = 'mongodb://localhost:27017/learnyoumongo'
+var db, url = process.env.LEARNYOUMONGO_URI || 'mongodb://localhost:27017/learnyoumongo'
 
 exercise.addSetup(function(mode, cb) {
   var self = this

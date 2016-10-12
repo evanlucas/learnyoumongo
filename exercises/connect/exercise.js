@@ -5,7 +5,8 @@ exercise.requireSubmission = false
 
 exercise.addProcessor(function(mode, cb) {
   var self = this
-  var url = 'mongodb://localhost:27017/learnyoumongo'
+  var url = process.env.LEARNYOUMONGO_URI || 'mongodb://localhost:27017/learnyoumongo'
+
   mongo.connect(url, function(err, db) {
     if (err) {
       return self.emit('fail', 'Error connecting to mongo. ' + err.message)

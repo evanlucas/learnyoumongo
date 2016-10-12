@@ -1,7 +1,6 @@
 Here we will learn how to search for documents.
 
-In this exercise the database name is `learnyoumongo`.
-So, the url would be something like: `mongodb://localhost:27017/learnyoumongo`
+The url would be something like: `mongodb://localhost:27017/learnyoumongo`
 
 Use the `parrots` collection to find all documents where `age`
 is greater than the first argument passed to your script.
@@ -26,7 +25,8 @@ To find a document or documents, one needs to call `find()` on the collection.
 
 Find is a little bit different than what we are used to seeing.
 
-To access the arguments you can use the `process.argv` array of strings (the first argument is stored at the third position `process.argv[2]`). To convert to an integer, you could use parseInt()
+To access the arguments you can use the `process.argv` array of strings (the first argument is stored at the
+third position `process.argv[2]`). To convert to an integer, you could use parseInt()
 
 Here is an example:
 

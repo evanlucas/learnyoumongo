@@ -1,9 +1,8 @@
 Ahora vamos a aprender cómo buscar documentos pero solo acceder a los campos
 que necesitamos. Este método es conocido como proyección (`projection`) en MongoDB.
 
-Usa la colección `parrots` de la base de datos llamada `learnyoumongo` para
-encontrar todos los documentos donde `age` sea mayor que el primer argumento
-dado a tu script.
+Usa la colección `parrots` para encontrar todos los documentos donde `age` sea
+mayor que el primer argumento dado a tu script.
 
 La diferencia entre esta lección y la anterior es que solo queremos los campos
 `name` y `age`.

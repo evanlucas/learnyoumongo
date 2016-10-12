@@ -1,6 +1,5 @@
 Ahora vamos a aprender cómo buscar documentos.
 
-En este ejercicio la base de datos se llama `learnyoumongo.
 Así que el url sería algo así: `mongodb://localhost:27017/learnyoumongo`
 
 Usa la colección `parrots` para encontrar todos los documentos donde
