@@ -20,8 +20,14 @@ $ [sudo] npm install -g learnyoumongo
 
 ### Languages
 
-Currently, `learnyoumongo` is only in English. Please feel free to
-contribute translations!
+Please feel free to contribute translations!
+Currently, `learnyoumongo` is available in:
+1. English
+2. Portuguese
+3. Spanish
+4. 日本語 Japanese
+5. Russian
+6. 中文 Chinese
 
 ## Author
 

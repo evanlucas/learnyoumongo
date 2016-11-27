@@ -1,0 +1,14 @@
+{
+  "title": "学习MongoDB",
+  "exercise": {
+    "MONGOD": "安装MONGOD",
+    "CONNECT": "连接MONGOD数据库",
+    "FIND": "查询条目",
+    "FIND PROJECT": "查询（进阶）",
+    "INSERT": "增加新条目",
+    "UPDATE": "更新条目",
+    "REMOVE": "删除条目",
+    "COUNT": "条目总计数",
+    "AGGREGATE": "聚合"
+  }
+}
