@@ -50,12 +50,12 @@ Say you wanted to specify a collection named `users`:
 var collection = db.collection('users')
 ```
 
-To insert a document, one would need to call `insert()` on the collection, like this:
+To insert a single document, one would need to call `insertOne()` on the collection, like this:
 ```js
 
 // inserting document
 // { a : 2 }
-collection.insert({
+collection.insertOne({
   a: 2
 }, function(err, data) {
   // handle error
@@ -69,4 +69,4 @@ close the `db`. That can be done by calling `db.close()` after you
 have finished.
 
 ## Resource
-* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#insert
+* http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#insertOne
