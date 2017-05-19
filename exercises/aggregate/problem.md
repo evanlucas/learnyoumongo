@@ -32,8 +32,8 @@ To use the `aggregate()` function, one first needs the collection.
 The `aggregate()` function takes an array of objects as the first argument.
 
 This array will contain the different pipelines for the aggregation.
-To read more about pipelines, please visit [Aggregation](http://docs.mongodb.org/manual/core/aggregation-introduction/).
-To read more about `aggregate()`, please visit [`aggregate()`](http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#aggregate).
+To read more about pipelines, please visit http://docs.mongodb.org/manual/core/aggregation-introduction/.
+To read more about `aggregate()`, please visit http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#aggregate.
 
 
 The two main pipeline stages we will use will be `$match` and `$group`.
