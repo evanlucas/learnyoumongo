@@ -11,9 +11,12 @@ The document should be a json document with the following properties:
 
 `lastName` will be passed as the second argument to the lesson.
 
-Use `console.log` to print out the object used to create the document.
+Use `console.log` to print out the object that you used to create
+the document. Do not print out anything other than this to the console,
+or it will not be possible to verify your solution.
 
-Make sure you use `JSON.stringify` convert it to JSON.
+Since your object should be in JSON format, make sure you use
+`JSON.stringify` when outputting it to the console.
 
 -----------------------------------------------------------
 ## HINTS
@@ -67,6 +70,10 @@ collection.insert({
 If your program does not finish executing, you may have forgotten to
 close the `db`. That can be done by calling `db.close()` after you
 have finished.
+
+NOTE: You will not be able to log anything to the console while running this
+challenge in the test environment. You might have to get creative while
+debugging!
 
 ## Resource
 * http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#insert
