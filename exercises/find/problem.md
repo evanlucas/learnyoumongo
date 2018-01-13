@@ -1,7 +1,7 @@
 Here we will learn how to search for documents.
 
 In this exercise the database name is `learnyoumongo`.
-So, the url would be something like: `mongodb://localhost:27017/learnyoumongo`
+The URL would be something like: `mongodb://localhost:27017/`.
 
 Use the `parrots` collection to find all documents where `age`
 is greater than the first argument passed to your script.
@@ -15,8 +15,10 @@ To connect to the database, one can use something like this:
 
 ```js
 var mongo = require('mongodb').MongoClient
-mongo.connect(url, function(err, db) {
-  // db gives access to the database
+mongo.connect(url, function(err, dbConnector) {
+
+  var database = dbConnector.db(database_name);
+  //database gives you access to the DB.
 })
 ```
 
