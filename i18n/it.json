@@ -1,0 +1,14 @@
+{
+  "title": "Impara MongoDB",
+  "exercise": {
+    "MONGOD": "MONGOD",
+    "CONNECT": "CONNETTI",
+    "FIND": "TROVA",
+    "FIND PROJECT": "PROGETTO TROVA",
+    "INSERT": "AGGIUNGI",
+    "UPDATE": "AGGIORNA",
+    "REMOVE": "RIMUOVI",
+    "COUNT": "CONTA",
+    "AGGREGATE": "AGGREGA"
+  }
+}
