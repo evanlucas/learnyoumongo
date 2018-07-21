@@ -13,7 +13,7 @@ The document should be a json document with the following properties:
 
 Use `console.log` to print out the object used to create the document.
 
-Make sure you use `JSON.stringify` convert it to JSON.
+Make sure you use `JSON.stringify` to convert it to JSON.
 
 -----------------------------------------------------------
 ## HINTS
