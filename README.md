@@ -25,9 +25,10 @@ Currently, `learnyoumongo` is available in:
 1. English
 2. Portuguese
 3. Spanish
-4. 日本語 Japanese
-5. Russian
-6. 中文 Chinese
+4. French
+5. 日本語 Japanese
+6. Russian
+7. 中文 Chinese
 
 ## Author
 
