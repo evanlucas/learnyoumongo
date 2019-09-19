@@ -1,0 +1,14 @@
+{
+  "title": "Apprendre MongoDB",
+  "exercise": {
+    "MONGOD": "MONGOD",
+    "CONNECT": "CONNECTER",
+    "FIND": "RECHERCHER",
+    "FIND PROJECT": "RECHERCHER DANS DES DOCUMENTS",
+    "INSERT": "AJOUTER",
+    "UPDATE": "MODIFIER",
+    "REMOVE": "SUPPRIMER",
+    "COUNT": "COMPTER",
+    "AGGREGATE": "AGREGER"
+  }
+}
